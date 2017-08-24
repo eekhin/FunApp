@@ -25,9 +25,9 @@ public class FunApp {
 		System.out.println("Check the grade value");
 		double gradeValue = AppBasics.requestDouble("Can i get your grade value");
 		if (gradeValue >= 90) {
-			System.out.print("You got an A");
+			System.out.println("You got an A");
 		} else if (gradeValue >= 70) {
-			System.out.print("You got an B");
+			System.out.println("You got an B");
 		} else if (gradeValue >= 50) {
 			System.out.println("You got an C");
 		} else {

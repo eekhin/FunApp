@@ -87,8 +87,9 @@ public class AppBasics {
 			System.out.print(question + "");
 			input = scanner.nextLine();
 			try {
-				num = Double.parseDouble(input); // num =
-												 // Integer.parseInt(input);
+				num = Double.parseDouble(input);
+				isValid = true;// num =
+								// Integer.parseInt(input);
 			} catch (NumberFormatException e) {
 				System.out.println("You did not supply a valid number [" + input + "].please provide only digits.");
 			}
