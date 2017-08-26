@@ -136,30 +136,26 @@ public class AppBasics {
 		String input;
 		boolean isValid = false;
 		while (!isValid) {
-
 			System.out.print(question + " ");
 			input = scanner.nextLine();
-
-		try {
-			    num = Integer.parseInt(input);
-			    if(num > max) {
-			    	throw new RequestIntOverMaxException();
-			    }else if(num < min) {
-			    	throw new RequestIntUnderMinException();
-
-			    }
-			    isValid = true;
-
-		    }catch (NumberFormatException e) {
-		    	System.out.println("You did not supply a valid number [" + input + "].please provide only digits.");
-		    }catch (NumberFormatException e) {
-		    	System.out.println("You have exceeded the max value of \" + max + \" [\" + input\r\n" +
-		    			" + \"]. Please provide a number within range.")
-		    }catch (NumberFormatException e) {
-		    	System.out.println("You have not reached the min value of \" + min + \" [\" + input\r\n" +
-		      		" + \"]. Please provide a number within range.");
-		       }
-		    }
+			try {
+				num = Integer.parseInt(input);
+				if (num > max) {
+					throw new RequestIntOverMaxException();
+				} else if (num < min) {
+					throw new RequestIntUnderMinException();
+				}
+				isValid = true;
+			} catch (NumberFormatException e) {
+				System.out.println("You did not supply a valid number [" + input + "].please provide only digits.");
+			} catch (RequestIntOverMaxException e) {
+				System.out.println("You have exceeded the max value of \" + max + \" [\" + input\r\n"
+						+ " + \"]. Please provide a number within range.");
+			} catch (RequestIntUnderMinException e) {
+				System.out.println("You have not reached the min value of \" + min + \" [\" + input\r\n"
+						+ " + \"]. Please provide a number within range.");
+			}
+		}
 		return num;
 	}
 
